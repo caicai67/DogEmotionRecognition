@@ -1,0 +1,16 @@
+Installing Scikit-image (skimage)
+
+How I did it:
+1. installed python 2.7: https://www.python.org/downloads/
+2. Downloaded miniconda from here: http://conda.pydata.org/miniconda.html
+3. moved the “Miniconda3-latest-MacOSX-x86_64.sh” file to my current user directory, and 	navigated to that directory in the terminal
+4. typed “bash Miniconda3-latest-MacOSX-x86_64.sh” into the terminal/command prompt to 		install conda
+5. typed “conda install scikit-image” to install scikit-image
+
+
+if something goes wrong:
+	you might also need setup tools (“pip install -U pip setuptools”)
+	and if pip isn’t working install it per instructions here: 
+	(https://packaging.python.org/installing/)
+
+
