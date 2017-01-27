@@ -4,7 +4,7 @@ from skimage.feature import hog
 from skimage import data, color, exposure
 from skimage import io
 
-cat = color.rgb2gray(io.imread("tyggz.jpg"))
+cat = color.rgb2gray(io.imread("img/tyggz.jpg"))
 # image = color.rgb2gray(data.astronaut())
 
 fd, hog_image = hog(cat, orientations=8, pixels_per_cell=(16, 16),
