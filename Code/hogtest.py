@@ -2,17 +2,18 @@ import matplotlib.pyplot as plt
 
 from skimage.feature import hog
 from skimage import data, color, exposure
+from skimage import io
 
+cat = color.rgb2gray(io.imread("tyggz.jpg"))
+# image = color.rgb2gray(data.astronaut())
 
-image = color.rgb2gray(data.astronaut())
-
-fd, hog_image = hog(image, orientations=8, pixels_per_cell=(16, 16),
+fd, hog_image = hog(cat, orientations=8, pixels_per_cell=(16, 16),
                     cells_per_block=(1, 1), visualise=True)
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4), sharex=True, sharey=True)
 
 ax1.axis('off')
-ax1.imshow(image, cmap=plt.cm.gray)
+ax1.imshow(cat, cmap=plt.cm.gray)
 ax1.set_title('Input image')
 ax1.set_adjustable('box-forced')
 
