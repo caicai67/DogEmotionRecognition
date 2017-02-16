@@ -1,10 +1,27 @@
 import matplotlib.pyplot as plt
+import PIL.Image
+import json
+import pyexiv2
+
+from PIL.ExifTags import TAGS
 
 from skimage.feature import hog
 from skimage import data, color, exposure
 from skimage import io
 
+metadata = pyexiv2.ImageMetadata('img/tyggz.jpg')
+metadata.read()
+data = json.loads(metadata['Exif.Photo.UserComment'].value)
+
+# data = json.loads(raw['Exif.Photo'].value)
+
+# data =  PIL.Image.open('img/tyggz.jpg')._getexif()
+# for (k,v) in data.iteritems():
+#         print '%s = %s' % (TAGS.get(k), v)
+# data =  PIL.Image.open('img/tyggz.jpg').info
+print data
 cat = color.rgb2gray(io.imread("img/tyggz.jpg"))
+
 # image = color.rgb2gray(data.astronaut())
 
 fd, hog_image = hog(cat, orientations=8, pixels_per_cell=(16, 16),
